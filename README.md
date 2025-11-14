@@ -167,3 +167,10 @@
 * **`_config.yml`**: GitHub Pagesのビルド設定ファイルです。
 
 ---
+
+## 開発者 (Author)
+
+**ねおん (Neon)**
+* UserScript開発者 / AIartクリエイター
+* GitHub: [https://github.com/neon-aiart](https://github.com/neon-aiart)
+* Bluesky: [https://bsky.app/profile/neon-ai.art](https://bsky.app/profile/neon-ai.art)
