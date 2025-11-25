@@ -128,12 +128,15 @@
 
 ---
 
-## 🛡️ ライセンスについて
+## 🛡️ ライセンスについて (License)
 
-このアプリケーションのソースコードは、ねおんが著作権を保有しています。
+このアプリケーションのソースコードは、ねおんが著作権を保有しています。  
+The source code for this application is copyrighted by Neon.
 
-* **ライセンス**: **CC BY-NC 4.0** です。（**LICENSEファイル**をご参照ください。）
-* **お願い**: 個人での利用や改変、非営利の範囲内での再配布はOKです。**商用目的での利用はご遠慮ください**。
+* **ライセンス**: **[CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.ja)** です。（LICENSEファイルをご参照ください。）
+* **商用利用不可**: 個人での利用や改変、非営利の範囲内での再配布はOKです。**商用目的での利用はご遠慮ください**。  
+  **No Commercial Use**: Personal use, modification, and non-profit redistribution are permitted. **Please refrain from commercial use.**  
+※ ご利用は自己責任でお願いします。（悪用できるようなものではないですが、念のため！）
 
 ---
 
