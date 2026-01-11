@@ -145,12 +145,14 @@ The source code for this application is copyrighted by Neon.
 
 ---
 
-### 🖼️ 生成したAIイラストについて
+### 🖼️ 生成したAIイラストについて / About Generated AI Illustrations
 
-* **クレジット表記・使用報告などは一切不要です。**
-* SNSなどに投稿する場合は、トラブルを避けるために**AI生成タグ**をつけることを推奨します。
-* その他、**Google側のルールを順守**してご利用ください。
-
+* **クレジット表記・使用報告などは一切不要です:** 生成した画像は自由にご利用いただけます。クレジット表記や使用報告の義務はありません。  
+  **No Credit or Reporting Required:** You are free to use the generated images. There is no obligation to provide credit or report usage.
+* **SNS投稿時の推奨事項:** SNSなどに投稿する場合は、トラブルを避けるために**AI生成タグ**をつけることを推奨します。  
+  **Posting on SNS:** When posting to SNS, it is recommended to use **AI-generation tags** to avoid potential misunderstandings or issues.
+* **規約の順守:** その他、**Google側のルールを順守**してご利用ください。  
+  **Compliance with Rules:** Please comply with all other **Google policies and terms of service** when using this tool.
 ---
 
 ### 🏆 Gemini開発チームからの称賛 (Exemplary Achievement)
