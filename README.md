@@ -1,17 +1,17 @@
-# 🐥 フィギュア化メーカー (Figure Maker) v6.4
+# 🐥 フィギュア化メーカー (Figure Maker) v6.4  
 
 <img src="https://raw.githubusercontent.com/neon-aiart/figure-maker-gemini-canvas/main/figure_maker_20250924_174842.png" style="height: 200px; width: 200px; object-fit: contain;" align="right" alt="Meshi Art Sample" />
 
 このアプリケーションは、**GoogleのGemini Canvas環境**専用の画像生成補助アプリです。  
-**元画像をアップロードするだけ**で、まるで市販されているような**高品質なフィギュア風AIイラスト**に変換（生成補助）します。
+**元画像をアップロードするだけ**で、まるで市販されているような**高品質なフィギュア風AIイラスト**に変換（生成補助）します。  
 
 <br clear="right">
 
 ---
 
-## 🚀 動作環境とアクセス方法
+## 🚀 動作環境とアクセス方法  
 
-### ⚠️ 開発の動機と動作環境
+### ⚠️ 開発の動機と動作環境  
 
 このアプリは、**Geminiチャット上での画像生成が1日10枚程度で制限に達してしまう**という課題を解決するため  
 個人利用の無料枠を十分に活用できる**Gemini API**を通じて画像生成を行うために設計されました。
@@ -19,45 +19,45 @@
 * **Googleアカウントでの実行:** このアプリは、Googleの**Gemini Canvas環境**の特殊なAPIとインフラに依存して動作しています。
 * **利用時の注意:** このアプリで実行される全ての画像生成処理は、**あなたのGoogleアカウント**を経由して実行されます。  
   規約違反となるようなコンテンツの生成や、無茶な利用による**アカウント凍結などのリスク**については、開発者は責任を負いません。  
-  **Google側のルールを順守**してご利用ください。
-* **コードについて:** このGitHubリポジトリのコードをローカル環境で実行することはできません。
+  **Google側のルールを順守**してご利用ください。  
+* **コードについて:** このGitHubリポジトリのコードをローカル環境で実行することはできません。  
 
-### 🌐 アプリへのアクセス
+### 🌐 アプリへのアクセス  
 
-以下のリンクから、Gemini Canvas環境で直接アプリをご利用ください。
+以下のリンクから、Gemini Canvas環境で直接アプリをご利用ください。  
 
-**[✨ フィギュア化メーカーを試す ✨](https://gemini.google.com/share/0834824a2ad2)**
+**[✨ フィギュア化メーカーを試す ✨](https://gemini.google.com/share/0834824a2ad2)**  
 
 ---
 
-## 🌟 v6.3 での主な進化 (Major Update!)
+## 🌟 v6.3 での主な進化 (Major Update!)  
 
-**構図の自由化**と**操作性**を大幅に向上させたメジャーアップデートです。
+**構図の自由化**と**操作性**を大幅に向上させたメジャーアップデートです。  
 
-### 1. 構図の自由化：アスペクト比の選択に対応
-**画像の縦横比（アスペクト比）の固定**を解消しました。
-* 元絵の内容を活かしつつ、**16:9**（横長）や **1:1**（正方形）など、**9種類のアスペクト比**を自由に選択して拡張生成できます。
-* ポスターやSNSアイコンなど、出力先に合わせた自由な構図でフィギュアを生成できます。
+### 1. 構図の自由化：アスペクト比の選択に対応  
+**画像の縦横比（アスペクト比）の固定**を解消しました。  
+* 元絵の内容を活かしつつ、**16:9**（横長）や **1:1**（正方形）など、**9種類のアスペクト比**を自由に選択して拡張生成できます。  
+* ポスターやSNSアイコンなど、出力先に合わせた自由な構図でフィギュアを生成できます。  
 
-### 2. 新フィギュアタイプとUIの進化
-* **５つの新フィギュアタイプ**を追加！「**アクスタ**」「**ぬい**」「**コスプレ**」など、表現の幅が大きく広がりました。
-  * 新しいタイプはベーシック推奨、選択時に台座などオプションを自動セットします
-    * アクスタ： ベーシック、透明アクリル台座
-    * アクキー、ぬい： ベーシック、台座なし
-    * コスプレ、ジブリ風： ベーシック、指定しない（背景）、台座なし
-* **左右反転、クローズアップ、クリアボタン**など、細部にわたる操作ボタンを実装し、操作性が大幅に向上しました。
+### 2. 新フィギュアタイプとUIの進化  
+* **５つの新フィギュアタイプ**を追加！「**アクスタ**」「**ぬい**」「**コスプレ**」など、表現の幅が大きく広がりました。  
+  * 新しいタイプはベーシック推奨、選択時に台座などオプションを自動セットします  
+    * アクスタ： ベーシック、透明アクリル台座  
+    * アクキー、ぬい： ベーシック、台座なし  
+    * コスプレ、ジブリ風： ベーシック、指定しない（背景）、台座なし  
+* **左右反転、クローズアップ、クリアボタン**など、細部にわたる操作ボタンを実装し、操作性が大幅に向上しました。  
   * クリアボタン：「追加のプロンプト｜追加のネガティブプロンプト」の入力欄に文字が入っていると  
-    元画像エリア右上にワンクリックで削除できるボタンがでます。
+    元画像エリア右上にワンクリックで削除できるボタンがでます。  
 
-### 3. 🛡️ 安定性の向上
-* 生成AI特有の**違法なロゴやテキストの生成を抑制**。より安全でクリーンな画像を生成します。
-* ロゴ修正のロジックを、強力すぎる強制語を使わない**シンプルな指示**に改善しました。
+### 3. 🛡️ 安定性の向上  
+* 生成AI特有の**違法なロゴやテキストの生成を抑制**。より安全でクリーンな画像を生成します。  
+* ロゴ修正のロジックを、強力すぎる強制語を使わない**シンプルな指示**に改善しました。  
 
 ---
 
-## 💡 技術的な特徴 (Canvas開発者向け)
+## 💡 技術的な特徴 (Canvas開発者向け)  
 
-このアプリの真の価値は、**Gemini Canvasの制約**の中で、いかに高度な画像処理を実現したかにあります。
+このアプリの真の価値は、**Gemini Canvasの制約**の中で、いかに高度な画像処理を実現したかにあります。  
 
 * **連続的な画像処理:** 履歴機能（元に戻す/やり直す）の実装は、`replaceState` や `pushState` が使えないCanvas環境下で、**独自の配列管理と状態復元ロジック**によって実現されています。
 * **高度な画像拡張:** アスペクト比の変更は、不安定なAPI環境下で、「**コンテンツ解析 → シンプルなプロンプトによる指示 → サイズ変更**」という3段階の制御ロジックによって、成功率を安定させています。
@@ -75,13 +75,13 @@
   ただし、**他のワードの注目度が下がる**ので注意です。
 * **高度な画像拡張:** アスペクト比の変更は、不安定なAPI環境下で、「**コンテンツ解析 → シンプルなプロンプトによる指示 → サイズ変更**」という3段階の制御ロジックによって、成功率を安定させています。
 * **アスペクト比の変更について:** 最後に送った画像のアスペクト比で返してくるという噂があります。  
-  いろいろ思考錯誤してなんとか成功した感じなので確実な方法を探すのは現時点では難しいかもしれない。
+  いろいろ思考錯誤してなんとか成功した感じなので確実な方法を探すのは現時点では難しいかもしれない。  
   
 **【⚠️ アスペクト比変更の限界について】**  
 **この機能は、常に成功を保証するものではありません。**  
 生成AIの特性上、アスペクト比の変更指示自体が無視されたり、タイムアウトでリセットされたりする場合があります。  
 現状、「まったく成功しない」状態から「失敗もあるが成功もある」状態に改善できた段階です。  
-これ以上成功率を上げるには、さらなる試行錯誤が必要であり、複雑な指示はかえって確率を下げる可能性があることをご了承ください。
+これ以上成功率を上げるには、さらなる試行錯誤が必要であり、複雑な指示はかえって確率を下げる可能性があることをご了承ください。  
 
 ---
 
@@ -173,22 +173,16 @@ The source code for this application is copyrighted by Neon.
 
 ---
 
-## 📌 補足情報 / 管理者メモ
+## 開発者 (Author)  
 
-本リポジトリには、プロジェクトの機能とは直接関係のない、管理・運用上の目的で配置されている以下のファイルが含まれています。
-
-* **`googlef0587da5f8f69fa8.html`**: Google Search Consoleの所有権確認のために必須なファイルです。
-
----
-
-## 開発者 (Author)
-
-**ねおん (Neon)**
+**ねおん (Neon)**  
 <pre>
 <img src="https://www.google.com/s2/favicons?domain=bsky.app&size=16" alt="Bluesky icon"> Bluesky       :<a href="https://bsky.app/profile/neon-ai.art/">https://bsky.app/profile/neon-ai.art/</a>
 <img src="https://www.google.com/s2/favicons?domain=github.com&size=16" alt="GitHub icon"> GitHub        :<a href="https://github.com/neon-aiart/">https://github.com/neon-aiart/</a>
 <img src="https://neon-aiart.github.io/favicon.ico" alt="neon-aiart icon" width="16" height="16"> GitHub Pages  :<a href="https://neon-aiart.github.io/">https://neon-aiart.github.io/</a>
 <img src="https://www.google.com/s2/favicons?domain=greasyfork.org&size=16" alt="Greasy Fork icon"> Greasy Fork   :<a href="https://greasyfork.org/ja/users/1494762/">https://greasyfork.org/ja/users/1494762/</a>
+<img src="https://www.google.com/s2/favicons?domain=sizu.me&size=16" alt="Sizu icon"> Sizu Diary    :<a href="https://sizu.me/neon_aiart/">https://sizu.me/neon_aiart/</a>
+<img src="https://www.google.com/s2/favicons?domain=ofuse.me&size=16" alt="Ofuse icon"> Ofuse         :<a href="https://ofuse.me/neon/">https://ofuse.me/neon/</a>
 <img src="https://www.google.com/s2/favicons?domain=www.chichi-pui.com&size=16" alt="chichi-pui icon"> chichi-pui    :<a href="https://www.chichi-pui.com/users/neon/">https://www.chichi-pui.com/users/neon/</a>
 <img src="https://www.google.com/s2/favicons?domain=iromirai.jp&size=16" alt="iromirai icon"> iromirai      :<a href="https://iromirai.jp/creators/neon/">https://iromirai.jp/creators/neon/</a>
 <img src="https://www.google.com/s2/favicons?domain=www.days-ai.com&size=16" alt="DaysAI icon"> DaysAI        :<a href="https://www.days-ai.com/users/lxeJbaVeYBCUx11QXOee/">https://www.days-ai.com/users/lxeJbaVeYBCUx11QXOee/</a>
