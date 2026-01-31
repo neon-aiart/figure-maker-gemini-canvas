@@ -5,6 +5,8 @@
 このアプリケーションは、**GoogleのGemini Canvas環境**専用の画像生成補助アプリです。  
 **元画像をアップロードするだけ**で、まるで市販されているような**高品質なフィギュア風AIイラスト**に変換（生成補助）します。  
 
+⭐ [スター](https://github.com/neon-aiart/figure-maker-gemini-canvas/)をポチッとお願いします✨ (Please hit the [Star] button!)  
+
 <br clear="right">  
 
 ---
