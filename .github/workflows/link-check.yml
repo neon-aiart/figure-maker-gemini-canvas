@@ -1,0 +1,38 @@
+name: Update README with Link Expiry
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Calculate Days and Update README
+        run: |
+          LAST_UPDATE="2026-02-10"
+          NEXT_UPDATE=$(date -d "$LAST_UPDATE + 60 days" +%Y-%m-%d)
+          CURRENT_DATE=$(date +%Y-%m-%d)
+          DIFF=$(( ($(date -d "$CURRENT_DATE" +%s) - $(date -d "$LAST_UPDATE" +%s)) / 86400 ))
+
+          if [ $DIFF -ge 60 ]; then
+            STATUS="共有リンク 最終更新日: $LAST_UPDATE (**⚠️ $DIFF 日経過 - まもなくリンク切れ**)\n次回更新予定日: $NEXT_UPDATE"
+          else
+            STATUS="共有リンク(share link) 最終更新日(last update): $LAST_UPDATE ($DIFF 日経過)  \n次回更新予定日(next update): $NEXT_UPDATE"
+          fi
+
+          # ここにさっきの sed を入れるわよ！
+          sed -i "/STATUS_START/,/STATUS_END/c\\\x3c\x21\x2d\x2d STATUS_START \x2d\x2d\x3e\n$STATUS\n\x3c\x21\x2d\x2d STATUS_END \x2d\x2d\x3e  " README.md
+
+      - name: Commit and Push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add README.md
+          git commit -m "Update link expiry status: $(date +%Y-%m-%d)" || exit 0
+          git push
