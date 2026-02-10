@@ -27,7 +27,7 @@ jobs:
           fi
 
           # ここにさっきの sed を入れるわよ！
-          sed -i "/STATUS_START/,/STATUS_END/c\\\x3c\x21\x2d\x2d STATUS_START \x2d\x2d\x3e\n$STATUS\n\x3c\x21\x2d\x2d STATUS_END \x2d\x2d\x3e  " README.md
+          sed -i "/STATUS_START/,/STATUS_END/c\\\x3c\x21\x2d\x2d STATUS_START \x2d\x2d\x3e\n$STATUS  \n\x3c\x21\x2d\x2d STATUS_END \x2d\x2d\x3e" README.md
 
       - name: Commit and Push
         run: |
