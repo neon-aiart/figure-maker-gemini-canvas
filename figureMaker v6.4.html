@@ -89,15 +89,15 @@
             -webkit-appearance: none; /* Webkitブラウザ用 */
             -moz-appearance: none;    /* Firefox用 */
             appearance: none;         /* 標準 */
-            
+
             /* 2. カスタムの矢印アイコンを背景画像として配置 */
             /* ここでは、白い下向き矢印のSVGデータURIを使用 */
             background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='white' stroke-width='2' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
-            
+
             /* 3. 矢印アイコンの位置とサイズを調整 */
             /* right: 矢印が右端から 0.75rem (Tailwindの3に相当) の位置に来るように設定 */
-            background-position: right 0.75rem center; 
+            background-position: right 0.75rem center;
             background-size: 1.5rem; /* アイコンサイズ */
 
             /* 4. 矢印アイコンとテキストが重ならないように右パディングを設定 */
@@ -134,7 +134,7 @@
         }
         .anim-waddle {
             animation: waddle-walk 0.8s infinite;
-            display: inline-block; 
+            display: inline-block;
         }
         /* 画像上のローディングオーバーレイ用のスタイル */
         .image-loading-overlay {
@@ -280,9 +280,9 @@
         /* 画像を左右反転させるためのCSSクラス */
         #generated-image {
             /* 左右反転のトランジションを 0.3秒間かけて実行 */
-            transition: transform 0.3s ease-in-out; 
+            transition: transform 0.3s ease-in-out;
             /* isImageFlippedがfalseのときのデフォルトスタイル */
-            transform: scaleX(1); 
+            transform: scaleX(1);
         }
         #generated-image.flipped {
             /* 水平方向（X軸）に画像を反転させる */
@@ -299,7 +299,7 @@
 
         /* リセットボタン */
         #reset-prompts-button {
-            box-shadow: 
+            box-shadow:
                 /* [横方向の影] [縦方向の影] [ぼかし] [広がり] [色] */
                 0 0 3px 3px white,
                 0 0 5px rgba(0, 0, 0, 0.4);
@@ -318,6 +318,7 @@
             font-size: 0.75rem;                         /* text-xs */
             border-radius: 0.5rem;                      /* rounded-lg */
             border: 1px solid rgba(160, 100, 0, 0.5); /* border-yellow-700/50 */
+            -webkit-backdrop-filter: blur(4px);         /* Safari向け */
             backdrop-filter: blur(4px);
             z-index: 10;
         }
@@ -379,7 +380,7 @@
 
         <div class="card p-0 overflow-hidden">
             <div id="drop-zone" class="image-preview-container cursor-pointer">
-                <input type="file" id="file-input" class="hidden" accept="image/*">
+                <input type="file" id="file-input" class="hidden" accept="image/*" aria-label="file-input">
                 <div id="drop-text" class="drop-zone-text text-gray-500">
                     <p>画像をここにドラッグ＆ドロップ</p>
                     <p class="my-2">または、ここをクリックしてファイルを選択</p>
@@ -396,12 +397,12 @@
 
         <div class="card">
             <div class="grid grid-cols-[1.3fr_1fr] lg:grid-cols-[3fr_3fr_4fr] gap-4 items-center">
-                <select id="mode-select" class="w-full px-4 py-3 bg-gray-800 rounded-full text-gray-200 border-2 border-gray-700 focus:border-blue-500 focus:outline-none">
+                <select id="mode-select" class="w-full px-4 py-3 bg-gray-800 rounded-full text-gray-200 border-2 border-gray-700 focus:border-blue-500 focus:outline-none" aria-label="mode-select">
                     <option value="basic">ベーシック</option>
                     <option value="modeling">3Dモデリング工程</option>
                     <option value="diorama">ジオラマ化</option>
                 </select>
-                <select id="type-select" class="w-full px-4 py-3 bg-gray-800 rounded-full text-gray-200 border-2 border-gray-700 focus:border-blue-500 focus:outline-none">
+                <select id="type-select" class="w-full px-4 py-3 bg-gray-800 rounded-full text-gray-200 border-2 border-gray-700 focus:border-blue-500 focus:outline-none" aria-label="type-select">
                     <option value="pvc" selected>PVC製フィギュア</option>
                     <option value="nendoroid">ねんどろいど</option>
                     <option value="clay">粘土細工</option>
@@ -411,14 +412,14 @@
                     <option value="cos">コスプレ</option>
                     <option value="ghibli">ジブリ風</option>
                 </select>
-                <select id="package-select" name="package" class="w-full px-4 py-3 bg-gray-800 rounded-full text-gray-200 border-2 border-gray-700 focus:border-blue-500 focus:outline-none">
+                <select id="package-select" name="package" class="w-full px-4 py-3 bg-gray-800 rounded-full text-gray-200 border-2 border-gray-700 focus:border-blue-500 focus:outline-none" aria-label="package-select">
                     <option value="no packaging box">パッケージ箱なし</option>
                     <option value="a realistic product packaging box of an anime figure" selected>日本のアニメ風パッケージ箱</option>
                     <option value="a retro toy-style blister pack">レトロおもちゃ風ブリスターパック</option>
                     <option value="a luxury collector's edition box">豪華コレクターズエディション箱</option>
                     <option value="">指定しない</option>
                 </select>
-                <select id="location-select" class="w-full px-4 py-3 bg-gray-800 rounded-full text-gray-200 border-2 border-gray-700 focus:border-blue-500 focus:outline-none">
+                <select id="location-select" class="w-full px-4 py-3 bg-gray-800 rounded-full text-gray-200 border-2 border-gray-700 focus:border-blue-500 focus:outline-none" aria-label="location-select">
                     <option value="on a simple white background">シンプルな白背景</option>
                     <option value="on a wooden table with soft lighting" selected>木製のテーブルの上</option>
                     <option value="in a glass showcase">ガラスのショーケース</option>
@@ -427,7 +428,7 @@
                     <option value="in a cozy and detailed bedroom background">朝の光が差し込む寝室</option>
                     <option value="">指定しない</option>
                 </select>
-                <select id="stand-select" class="w-full px-4 py-3 bg-gray-800 rounded-full text-gray-200 border-2 border-gray-700 focus:border-blue-500 focus:outline-none">
+                <select id="stand-select" class="w-full px-4 py-3 bg-gray-800 rounded-full text-gray-200 border-2 border-gray-700 focus:border-blue-500 focus:outline-none" aria-label="stand-select">
                     <option value="without a base">台座なし</option>
                     <option value="a simple black circular base" selected>シンプルな黒い円形台座</option>
                     <option value="on a rock-like diorama base">岩のようなジオラマ台座</option>
@@ -435,7 +436,7 @@
                     <option value="a transparent acrylic base">透明アクリル台座</option>
                     <option value="">指定しない</option>
                 </select>
-                <select id="aspect-ratio-select" class="w-full px-4 py-3 bg-gray-800 rounded-full text-gray-200 border-2 border-gray-700 focus:border-blue-500 focus:outline-none">
+                <select id="aspect-ratio-select" class="w-full px-4 py-3 bg-gray-800 rounded-full text-gray-200 border-2 border-gray-700 focus:border-blue-500 focus:outline-none" aria-label="aspect-ratio-select">
                     <option value="auto" selected>アスペクト比:オリジナル</option>
                     <option value="1:1">1:1 （正方形）</option>
                     <option value="3:2">3:2 （横長 写真サイズ）</option>
@@ -461,7 +462,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
                 <div>
                     <h3 class="text-lg font-bold mb-2 flex items-center">
-                        追加のプロンプト 
+                        追加のプロンプト
                         <div class="ml-4 flex items-center">
                             <label for="autoTranslateSwitch" class="text-sm font-normal text-gray-400 mr-2">自動翻訳:</label>
                             <input type="checkbox" id="autoTranslateSwitch" class="form-checkbox h-4 w-4 text-gray-400 border-gray-400 transition duration-150 ease-in-out" checked>
@@ -573,8 +574,8 @@
                 dropText: document.getElementById('drop-text'),
                 additionalPrompt: document.getElementById('additional-prompt'),
                 additionalNegativePrompt: document.getElementById('additional-negative-prompt'),
-                autoTranslateSwitch: document.getElementById('autoTranslateSwitch'), 
-                customTranslateSwitch: document.getElementById('customTranslateSwitch'), 
+                autoTranslateSwitch: document.getElementById('autoTranslateSwitch'),
+                customTranslateSwitch: document.getElementById('customTranslateSwitch'),
                 generateBtn: document.getElementById('generate-btn'),
                 loading: document.getElementById('loading'),
                 loadingText: document.getElementById('loading-text'),
@@ -594,7 +595,7 @@
                 licenseTooltip: document.getElementById('license-tooltip'),
                 toggleSizeBtn: document.getElementById('toggle-size-btn'),
                 toggleSizeIcon: document.getElementById('toggle-size-icon'),
-                resetPromptsButton: document.getElementById('reset-prompts-button'), 
+                resetPromptsButton: document.getElementById('reset-prompts-button'),
                 modeSelect: document.getElementById('mode-select'),
                 typeSelect: document.getElementById('type-select'),
                 packageSelect: document.getElementById('package-select'),
@@ -603,7 +604,7 @@
                 aspectRatioSelect: document.getElementById('aspect-ratio-select'),
                 actionArea: document.getElementById('action-area'),
                 fixLogoBtn: document.getElementById('fix-logo-btn'),
-                fixCloseupBtn: document.getElementById('fix-closeup-btn'), 
+                fixCloseupBtn: document.getElementById('fix-closeup-btn'),
                 furtherFigureBtn: document.getElementById('further-figure-btn'),
                 undoBtn: document.getElementById('undo-btn'),
                 redoBtn: document.getElementById('redo-btn'),
@@ -616,6 +617,7 @@
                 multiGenerateToggle: document.getElementById('multi-generate-toggle'),
             };
 
+            let toastTimeoutId = null;      // トースト表示のタイマー管理
             const MAX_HISTORY_SIZE = 20; // 最大履歴数
             let uploadedImageData = null, isContainMode = false;
             let uploadedImageMimeType = '';
@@ -624,8 +626,8 @@
             let imageHistory = [];
             let currentImageIndex = -1;
             let cachedSubjectType = null;
-            let cachedPromptTranslation = {}; 
-            let cachedNegativePromptTranslation = {}; 
+            let cachedPromptTranslation = {};
+            let cachedNegativePromptTranslation = {};
             const handleShiftEnter = (e) => {
                 if (e.key === 'Enter' && !e.shiftKey) {
                     e.preventDefault(); // Enterキーによるデフォルトの動作（改行など）を抑制
@@ -640,13 +642,13 @@
             /* アスペクト比の定義（W:H）
              * ratio.w / ratio.h で実際の比率 (float) が得られる。 */
             const ASPECT_RATIO_MAP = {
-                '1:1': { w: 1, h: 1 },
-                '3:2': { w: 3, h: 2 },
-                '2:3': { w: 2, h: 3 },
-                '4:3': { w: 4, h: 3 },
-                '3:4': { w: 3, h: 4 },
-                '16:9': { w: 16, h: 9 },
-                '9:16': { w: 9, h: 16 },
+                '1:1': { w: 1, h: 1, },
+                '3:2': { w: 3, h: 2, },
+                '2:3': { w: 2, h: 3, },
+                '4:3': { w: 4, h: 3, },
+                '3:4': { w: 3, h: 4, },
+                '16:9': { w: 16, h: 9, },
+                '9:16': { w: 9, h: 16, },
             };
             let isMultiGenerateEnabled = true;
             elements.appVersionSpan.textContent = `v${APP_VERSION}`;
@@ -654,20 +656,32 @@
             // --- イベントリスナー ---
             elements.dropZone.addEventListener('click', () => elements.fileInput.click());
             elements.fileInput.addEventListener('change', (e) => e.target.files[0] && processFile(e.target.files[0]));
-            elements.dropZone.addEventListener('dragover', (e) => { e.preventDefault(); e.stopPropagation(); elements.dropZone.classList.add('border-blue-500'); });
-            elements.dropZone.addEventListener('dragleave', (e) => { e.preventDefault(); e.stopPropagation(); elements.dropZone.classList.remove('border-blue-500'); });
-            elements.dropZone.addEventListener('drop', (e) => { e.preventDefault(); e.stopPropagation(); e.dataTransfer.files[0] && processFile(e.dataTransfer.files[0]); });
-            elements.toggleSizeBtn.addEventListener('click', (e) => { e.stopPropagation(); isContainMode = !isContainMode; elements.imagePreview.classList.toggle('image-fit-contain'); elements.toggleSizeIcon.textContent = isContainMode ? 'zoom_out_map' : 'zoom_in_map'; });
+            elements.dropZone.addEventListener('dragover', (e) => {
+                e.preventDefault(); e.stopPropagation(); elements.dropZone.classList.add('border-blue-500');
+            });
+            elements.dropZone.addEventListener('dragleave', (e) => {
+                e.preventDefault(); e.stopPropagation(); elements.dropZone.classList.remove('border-blue-500');
+            });
+            elements.dropZone.addEventListener('drop', (e) => {
+                e.preventDefault(); e.stopPropagation(); e.dataTransfer.files[0] && processFile(e.dataTransfer.files[0]);
+            });
+            elements.toggleSizeBtn.addEventListener('click', (e) => {
+                e.stopPropagation(); isContainMode = !isContainMode; elements.imagePreview.classList.toggle('image-fit-contain'); elements.toggleSizeIcon.textContent = isContainMode ? 'zoom_out_map' : 'zoom_in_map';
+            });
             elements.generateBtn.addEventListener('click', handleGeneration);
             elements.infoBtn.addEventListener('mouseenter', () => elements.infoTooltip.classList.remove('hidden'));
             elements.infoBtn.addEventListener('mouseleave', () => elements.infoTooltip.classList.add('hidden'));
             elements.licenseBtn.addEventListener('mouseenter', () => elements.licenseTooltip.classList.remove('hidden'));
             elements.licenseBtn.addEventListener('mouseleave', () => elements.licenseTooltip.classList.add('hidden'));
-            window.addEventListener('scroll', () => { window.scrollY > 200 ? elements.scrollToTopBtn.classList.add('visible') : elements.scrollToTopBtn.classList.remove('visible'); });
-            elements.scrollToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+            window.addEventListener('scroll', () => {
+                window.scrollY > 200 ? elements.scrollToTopBtn.classList.add('visible') : elements.scrollToTopBtn.classList.remove('visible');
+            });
+            elements.scrollToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth', }));
             elements.downloadBtn.addEventListener('click', handleDownload);
             elements.copyAllPromptsBtn.addEventListener('click', () => copyToClipboard(`${lastPositivePrompt}\n${lastNegativePrompt}`, elements.copyAllPromptsBtn));
-            elements.copyrightWarning.addEventListener('click', () => { elements.copyrightWarning.style.display = 'none'; });
+            elements.copyrightWarning.addEventListener('click', () => {
+                elements.copyrightWarning.style.display = 'none';
+            });
             elements.fixLogoBtn.addEventListener('click', () => handleFixImage('logo'));
             elements.fixCloseupBtn.addEventListener('click', () => handleFixImage('closeup'));
             elements.furtherFigureBtn.addEventListener('click', () => handleFixImage('enhance'));
@@ -688,25 +702,25 @@
 
             const ACRYLIC_STAND_SETTINGS = {
                 mode: 'basic',
-                stand: 'a transparent acrylic base'
-            };
+                stand: 'a transparent acrylic base',
+    };
             const BASIC_NO_BASE_SETTINGS = {
                 mode: 'basic',
-                stand: 'without a base'
-            };
+                stand: 'without a base',
+    };
             const FULL_RESET_SETTINGS = {
                 mode: 'basic',
                 stand: 'without a base',
                 package: 'no packaging box',
-                location: ''
-            };
+                location: '',
+    };
             const AUTO_SETTINGS = {
                 stand: ACRYLIC_STAND_SETTINGS,
                 key: BASIC_NO_BASE_SETTINGS,
                 toy: BASIC_NO_BASE_SETTINGS,
                 cos: FULL_RESET_SETTINGS,
-                ghibli: FULL_RESET_SETTINGS
-            };
+                ghibli: FULL_RESET_SETTINGS,
+    };
 
             elements.typeSelect.addEventListener('change', (e) => {
                 const selectedType = e.target.value;
@@ -727,7 +741,7 @@
             });
 
             // リセットボタンのクリックイベント
-            elements.resetPromptsButton.addEventListener('click', (e) => { 
+            elements.resetPromptsButton.addEventListener('click', (e) => {
                 e.stopPropagation();
                 elements.additionalPrompt.value = '';
                 elements.additionalNegativePrompt.value = '';
@@ -771,8 +785,8 @@
             // キーボードの左右矢印キーでUndo/Redo
             document.addEventListener('keydown', (e) => {
                 // テキスト入力中はキー操作を無効にする
-                if (document.activeElement === elements.additionalPrompt || 
-                    document.activeElement === elements.additionalNegativePrompt || 
+                if (document.activeElement === elements.additionalPrompt ||
+                    document.activeElement === elements.additionalNegativePrompt ||
                     document.activeElement === elements.customFixPrompt) {
                     return;
                 }
@@ -781,16 +795,13 @@
                     e.preventDefault();
                     handleFixImage('logo');
                 }
-                // 「←」キーでUndo
                 if (e.key === 'ArrowLeft') {
-                    // ボタンが有効な時だけ実行
+                    // 「←」キーでUndo: ボタンが有効な時だけ実行
                     if (!elements.undoBtn.disabled) {
                         undoImage();
                     }
-                }
-                // 「→」キーでRedo
-                else if (e.key === 'ArrowRight') {
-                    // ボタンが有効な時だけ実行
+                } else if (e.key === 'ArrowRight') {
+                    // 「→」キーでRedo: ボタンが有効な時だけ実行
                     if (!elements.redoBtn.disabled) {
                         redoImage();
                     }
@@ -799,13 +810,15 @@
 
             // 【左右反転ボタンのイベントリスナー追加】
             elements.flipImageBtn.addEventListener('click', () => {
-                if (!uploadedImageData) return;
+                if (!uploadedImageData) {
+                    return;
+                }
 
                 // 状態を反転
                 isImageFlipped = !isImageFlipped;
 
                 // 画像要素のクラスを切り替え
-                const targetImage = elements.generatedImage; 
+                const targetImage = elements.generatedImage;
                 if (isImageFlipped) {
                     targetImage.classList.add('flipped');
                 } else {
@@ -814,8 +827,8 @@
 
                 elements.flipImageBtn.classList.toggle('is-active', isImageFlipped);
 
-                const DEFAULT_CLASSES = ['bg-gray-700', 'hover:bg-gray-600'];
-                const ACTIVE_CLASSES = ['bg-orange-600', 'hover:bg-orange-500'];
+                const DEFAULT_CLASSES = ['bg-gray-700', 'hover:bg-gray-600',];
+                const ACTIVE_CLASSES = ['bg-orange-600', 'hover:bg-orange-500',];
 
                 if (isImageFlipped) {
                     // 反転している場合（アクティブ）
@@ -844,7 +857,9 @@
             updateCustomButtonState();
 
             function processFile(file) {
-                if (!file.type.startsWith('image/')) return showError('画像ファイルを選択してください。');
+                if (!file.type.startsWith('image/')) {
+                    return showError('画像ファイルを選択してください。');
+                }
                 uploadedImageMimeType = file.type;
                 const reader = new FileReader();
                 reader.onload = (e) => {
@@ -875,7 +890,7 @@
                     : 'gemini-2.5-flash-preview-05-20'; // テキストのみならテキストモデル
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
 
-                const response = await fetch(apiUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+                const response = await fetch(apiUrl, { method: 'POST', headers: { 'Content-Type': 'application/json', }, body: JSON.stringify(payload), });
 
                 if (!response.ok) {
                     const errorData = await response.json().catch(() => ({}));
@@ -901,10 +916,10 @@
                 const prompt = `Analyze the image only for logos or copyrighted text. If found, describe the location and the item it is on, using concise English. For example: "Logo on the bottom-right package corner" or "Brand name on the central figure's base". If no issue is found, respond with ONLY the word 'NONE'.`;
                 const payload = {
                     contents: [{ parts: [
-                        { text: prompt }, 
-                        { inlineData: { mimeType: 'image/jpeg', data: imageData } }
-                    ]}],
-                    generationConfig: { responseModalities: ['TEXT'] } 
+                        { text: prompt, },
+                        { inlineData: { mimeType: 'image/jpeg', data: imageData, }, },
+                    ], },],
+                    generationConfig: { responseModalities: ['TEXT',], },
                 };
                 try {
                     const result = await callGeminiAPI(payload); // callGeminiAPIが gemini-2.5-flash を選択する
@@ -938,11 +953,11 @@
                 }
                 const payload = {
                     contents: [{ parts: [
-                        { text: prompt },
-                        { inlineData: { mimeType: 'image/jpeg', data: base64Data } }
-                    ]}],
-                    safetySettings: [{ category: "HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold: "BLOCK_NONE" }],
-                    generationConfig: { responseModalities: ['TEXT', 'IMAGE'] },
+                        { text: prompt, },
+                        { inlineData: { mimeType: 'image/jpeg', data: base64Data, }, },
+                    ], },],
+                    safetySettings: [{ category: "HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold: "BLOCK_NONE", },],
+                    generationConfig: { responseModalities: ['TEXT', 'IMAGE',], },
                 };
 
                 const loadingMsg = isImageFixing ? 'ロゴ修正中' : '著作権チェック中';
@@ -950,7 +965,7 @@
 
                 // 戻されたデータが元のデータと異なれば（=修正が行われていれば）、wasProblematic=trueとする
                 const wasProblematic = (finalData !== base64Data);
-                return { base64Data: finalData, wasProblematic: wasProblematic };
+                return { base64Data: finalData, wasProblematic: wasProblematic, };
             }
 
             /**
@@ -963,7 +978,7 @@
              */
             function calculateDimensions(ratioStr, currentWidth, currentHeight) {
                 if (ratioStr === 'auto' || !ASPECT_RATIO_MAP[ratioStr]) {
-                    return { width: currentWidth, height: currentHeight };
+                    return { width: currentWidth, height: currentHeight, };
                 }
 
                 const MIN_SIZE = 512;
@@ -1028,7 +1043,7 @@
                     }
                 }
 
-                return { width: newWidth, height: newHeight };
+                return { width: newWidth, height: newHeight, };
             }
 
             /**
@@ -1048,20 +1063,20 @@
                 const ctx = canvas.getContext('2d');
 
                 // 3. コンテキストをクリア（デフォルトで透明）
-                ctx.clearRect(0, 0, width, height); 
+                ctx.clearRect(0, 0, width, height);
 
                 // 4. Base64文字列を取得し、ヘッダー部分を除去
                 // toDataURL()は "data:image/png;base64," のプレフィックスを返す
                 try {
                     const dataUrl = canvas.toDataURL('image/png');
                     const base64Prefix = 'data:image/png;base64,';
-                    
+
                     if (dataUrl.startsWith(base64Prefix)) {
                         return dataUrl.substring(base64Prefix.length);
                     } else {
                         // PNG形式でBase64が取得できなかった場合はエラー
                         console.error("[figureMaker] Canvas toDataURL failed to return PNG format.");
-                        return null; 
+                        return null;
                     }
                 } catch (e) {
                     console.error("[figureMaker] Canvas Base64 generation failed:", e);
@@ -1071,14 +1086,14 @@
 
             // 被写体判定
             async function detectSubject(imageData) {
-                const payload = { contents: [{ parts: [{ text: "Analyze the main subject of this image. Choose only one from 'person', 'animal', 'food', 'object', 'landscape', or 'other' if none apply. Respond with only one category name in English." }, { inlineData: { mimeType: 'image/jpeg', data: imageData } }] }] };
+                const payload = { contents: [{ parts: [{ text: "Analyze the main subject of this image. Choose only one from 'person', 'animal', 'food', 'object', 'landscape', or 'other' if none apply. Respond with only one category name in English.", }, { inlineData: { mimeType: 'image/jpeg', data: imageData, }, },], },], };
                 try {
                     const result = await callGeminiAPI(payload);
                     if (!result || !result.candidates || result.candidates.length === 0) {
-                         throw new Error('被写体判定中にAPIが空の応答を返しました。コンテンツ安全ポリシーに違反した可能性があります。');
+                        throw new Error('被写体判定中にAPIが空の応答を返しました。コンテンツ安全ポリシーに違反した可能性があります。');
                     }
                     const detected = result.candidates[0].content.parts[0].text.trim().toLowerCase();
-                    const subjectMap = { person: '人物', animal: '動物', food: '食べ物', object: 'モノ', landscape: '風景' };
+                    const subjectMap = { person: '人物', animal: '動物', food: '食べ物', object: 'モノ', landscape: '風景', };
                     return Object.keys(subjectMap).find(key => detected.includes(key)) || 'subject';
                 } catch (error) {
                     throw new Error('被写体の自動判定に失敗しました。安全ポリシー違反やAPI通信の問題の可能性があります。');
@@ -1089,9 +1104,9 @@
             async function translateText(text, stage) {
                 let useSwitch;
                 let isCustomFix = false;
-                if (stage === 'プロンプトを翻訳中(Positive)...' || stage === 'プロンプトを翻訳中(Negative)...') { 
+                if (stage === 'プロンプトを翻訳中(Positive)...' || stage === 'プロンプトを翻訳中(Negative)...') {
                     useSwitch = elements.autoTranslateSwitch;
-                } else if (stage === 'カスタム指示を翻訳中...') { 
+                } else if (stage === 'カスタム指示を翻訳中...') {
                     useSwitch = elements.customTranslateSwitch;
                     isCustomFix = true;
                 } else {
@@ -1104,7 +1119,9 @@
                 }
 
                 // 日本語を含まないなら、APIコールをせずそのまま返す
-                if (!text || !/[\u3000-\u303f\u3040-\u309f\u30a0-\u30ff\uff00-\uff9f\u4e00-\u9faf\u3400-\u4dbf]/.test(text)) return text;
+                if (!text || !/[\u3000-\u303f\u3040-\u309f\u30a0-\u30ff\uff00-\uff9f\u4e00-\u9faf\u3400-\u4dbf]/.test(text)) {
+                    return text;
+                }
 
                 // キャッシュ処理
                 const cacheKey = text;
@@ -1122,7 +1139,7 @@
 
                 const instruction = "Translate the following Japanese text to English for an image generation prompt. Keep the nuances and output only the translated text. Do not translate any proper nouns or brand names (e.g., Pokémon, Nike); retain the original spelling."
                     + (isCustomFix ? " This is for a custom fix/adjustment prompt." : "");
-                const payload = { contents: [{ parts: [{ text: `${instruction} Text to translate: "${text}"` }] }] };
+                const payload = { contents: [{ parts: [{ text: `${instruction} Text to translate: "${text}"`, },], },], };
                 try {
                     const result = await callGeminiAPI(payload);
                     const translatedText = result.candidates[0].content.parts[0].text.trim();
@@ -1161,7 +1178,7 @@
                     'on a simple white background': 'professional studio lighting, smooth studio background, sharp focus, shallow depth of field',
                     'on a wooden table with soft lighting': 'professional studio lighting, realistic wood texture, soft natural light, shallow depth of field',
                     'in a glass showcase': 'realistic glass reflection, detailed lighting, professional product photography, shallow depth of field',
-                    '': 'detailed and realistic, sharp focus, professional product photography, shallow depth of field'
+                    '': 'detailed and realistic, sharp focus, professional product photography, shallow depth of field',
                 };
 
                 let basePrompt = '';
@@ -1169,29 +1186,29 @@
                 let realismBoostPrompt = realismBoostMap[location] || '';
 
                 switch(mode) {
-                    case 'basic':
-                        if (type === 'cos') {
-                            // コスプレの場合: フィギュア化プロンプトを排除
-                            basePrompt = `Create a photorealistic image of a ${typePrompts[type]} based on the subject in this image.`;
-                        } else if (type === 'ghibli') {
-                            // ジブリ風の場合: フォトリアルとフィギュア化の指示をすべて削除
-                            basePrompt = `Create a high-quality image of the subject in this image, rendered as a character in the ${typePrompts[type]}.`;
-                            realismBoostPrompt = '';
-                        } else {
-                            // それ以外は従来のフィギュア化プロンプトを使用
-                            basePrompt = `Create a photorealistic image of a ${typePrompts[type]} based on the subject in this image. The figure should look like a real-world product. Keep the original design, pose, and colors. high detail, studio lighting.`;
-                        }
-                        break;
-                    case 'modeling':
-                        basePrompt = `Create a photorealistic image of a 1/7 scale commercialized ${typePrompts[type]} based on the ${subjectType} in this image. The figurine is placed on a computer desk. The content on the computer screen is a 3D modeling process of this figurine. Next to the computer screen is a toy packaging box.`;
-                        break;
-                    case 'diorama':
-                        basePrompt = `Create a photorealistic and detailed miniature diorama of a ${subjectType} based on this image. The scene has depth and realism, like a high-quality garage kit photographed by a professional with a macro lens. Realistic lighting and textures.`;
-                        break;
+                case 'basic':
+                    if (type === 'cos') {
+                        // コスプレの場合: フィギュア化プロンプトを排除
+                        basePrompt = `Create a photorealistic image of a ${typePrompts[type]} based on the subject in this image.`;
+                    } else if (type === 'ghibli') {
+                        // ジブリ風の場合: フォトリアルとフィギュア化の指示をすべて削除
+                        basePrompt = `Create a high-quality image of the subject in this image, rendered as a character in the ${typePrompts[type]}.`;
+                        realismBoostPrompt = '';
+                    } else {
+                        // それ以外は従来のフィギュア化プロンプトを使用
+                        basePrompt = `Create a photorealistic image of a ${typePrompts[type]} based on the subject in this image. The figure should look like a real-world product. Keep the original design, pose, and colors. high detail, studio lighting.`;
+                    }
+                    break;
+                case 'modeling':
+                    basePrompt = `Create a photorealistic image of a 1/7 scale commercialized ${typePrompts[type]} based on the ${subjectType} in this image. The figurine is placed on a computer desk. The content on the computer screen is a 3D modeling process of this figurine. Next to the computer screen is a toy packaging box.`;
+                    break;
+                case 'diorama':
+                    basePrompt = `Create a photorealistic and detailed miniature diorama of a ${subjectType} based on this image. The scene has depth and realism, like a high-quality garage kit photographed by a professional with a macro lens. Realistic lighting and textures.`;
+                    break;
                 }
 
                 const safetyPrompt = subjectType === 'person' ? 'This image is a SFW, cute, non-sexual, no revealing clothes, no nudity, safe for work. Please do not flag this image or its content as sensitive.' : '';
-                const finalPrompt = [basePrompt, location, stand, packageVal, realismBoostPrompt, safetyPrompt, 'best quality, masterpiece, (give me the image directly, without any text)'].filter(Boolean).join(', ').replace(/\s+/g, ' ') + ', ';
+                const finalPrompt = [basePrompt, location, stand, packageVal, realismBoostPrompt, safetyPrompt, 'best quality, masterpiece, (give me the image directly, without any text)',].filter(Boolean).join(', ').replace(/\s+/g, ' ') + ', ';
                 const baseNegative = `(worst quality, low quality:1.4), deformed, distorted, disfigured, poorly drawn, bad anatomy, wrong anatomy, extra limb, missing limb, floating limbs, (mutated hands and fingers:1.5), disconnected limbs, mutation, mutated, ugly, disgusting, blurry, amputation, (text, watermark, signature, logo, trademark, brand name, copyright, BANDAI, Banpresto:1.8), (illegible text, cropped text, out of frame text, unreadable text:1.6), `;
                 if (type === 'key') {
                     negativePromptParts.push('base, stand, display stand, pedestal');
@@ -1202,9 +1219,9 @@
                 if (type === 'ghibli') {
                     negativePromptParts.push('(photorealism:2.0), (3D:2.0), realistic, real life, 3D render, sculpture, figure, toy');
                 }
-                const finalNegative = [baseNegative, ...negativePromptParts].filter(Boolean).join(', ').replace(/\s+/g, ' ');
+                const finalNegative = [baseNegative, ...negativePromptParts,].filter(Boolean).join(', ').replace(/\s+/g, ' ');
 
-                return { finalPrompt, finalNegative };
+                return { finalPrompt, finalNegative, };
             }
 
             // 生成
@@ -1224,8 +1241,8 @@
                     elements.generatedImage.classList.remove('flipped'); // 画像から 'flipped' クラスを削除
                     elements.flipImageBtn.classList.remove('is-active'); // ボタンのUI状態をリセット is-activeを削除
                     // ボタンの色をデフォルトに戻す (DEFAULT_CLASSES/ACTIVE_CLASSESはスコープ外のため直書き)
-                    const DEFAULT_CLASSES = ['bg-gray-700', 'hover:bg-gray-600'];
-                    const ACTIVE_CLASSES = ['bg-orange-600', 'hover:bg-orange-500'];
+                    const DEFAULT_CLASSES = ['bg-gray-700', 'hover:bg-gray-600',];
+                    const ACTIVE_CLASSES = ['bg-orange-600', 'hover:bg-orange-500',];
                     // アクティブな色を削除し、デフォルトの色を追加
                     elements.flipImageBtn.classList.remove(...ACTIVE_CLASSES);
                     elements.flipImageBtn.classList.add(...DEFAULT_CLASSES);
@@ -1248,7 +1265,7 @@
                     let currentWidth = elements.imagePreview.naturalWidth || 1024;
                     let currentHeight = elements.imagePreview.naturalHeight || 1024;
 
-                    const newDimensions = calculateDimensions(selectedRatio, currentWidth, currentHeight); 
+                    const newDimensions = calculateDimensions(selectedRatio, currentWidth, currentHeight);
                     currentWidth = newDimensions.width;
                     currentHeight = newDimensions.height;
 
@@ -1263,48 +1280,48 @@
                         aspectRatioPrompt = `Expand the canvas of Image 1 to show more of the scene around the edges. Use Image 2 as the aspect ratio reference.`;
                     }
 
-                    const [translatedPrompt, translatedNegative] = await Promise.all([ 
-                        translateText(elements.additionalPrompt.value.trim(), 'プロンプトを翻訳中(Positive)...'), 
-                        translateText(elements.additionalNegativePrompt.value.trim(), 'プロンプトを翻訳中(Negative)...') 
+                    const [translatedPrompt, translatedNegative,] = await Promise.all([
+                        translateText(elements.additionalPrompt.value.trim(), 'プロンプトを翻訳中(Positive)...'),
+                        translateText(elements.additionalNegativePrompt.value.trim(), 'プロンプトを翻訳中(Negative)...'),
                     ]);
 
                     updateLoadingText('プロンプトを組み立て中...');
-                    let { finalPrompt, finalNegative } = buildPrompts(subjectType);
-                    const combinedPrompt = [aspectRatioPrompt, finalPrompt, translatedPrompt].filter(Boolean).join(', ');
-                    const combinedNegative = [finalNegative, translatedNegative].filter(Boolean).join(', ');
+                    let { finalPrompt, finalNegative, } = buildPrompts(subjectType);
+                    const combinedPrompt = [aspectRatioPrompt, finalPrompt, translatedPrompt,].filter(Boolean).join(', ');
+                    const combinedNegative = [finalNegative, translatedNegative,].filter(Boolean).join(', ');
 
                     lastPositivePrompt = combinedPrompt;
                     lastNegativePrompt = `Negative Prompt: ${combinedNegative}`;
                     elements.promptOutputTooltip.textContent = `${lastPositivePrompt}\n${lastNegativePrompt}`;
 
                     // --- APIペイロードの contents にダミー画像を挿入 ---
-                    const partsArray = []; 
+                    const partsArray = [];
                     // 元画像 (1枚目/内容)
-                    partsArray.push({ inlineData: { mimeType: uploadedImageMimeType, data: uploadedImageData } });
+                    partsArray.push({ inlineData: { mimeType: uploadedImageMimeType, data: uploadedImageData, }, });
                     // プロンプト (真ん中)
-                    partsArray.push({ 
-                        text: `${aspectRatioPrompt} ${finalPrompt} ${translatedPrompt} | Negative Prompt: ${combinedNegative}`
+                    partsArray.push({
+                        text: `${aspectRatioPrompt} ${finalPrompt} ${translatedPrompt} | Negative Prompt: ${combinedNegative}`,
                     });
                     // ダミー画像（Image 2/サイズ）を最後に挿入
                     if (ratioBase64) {
                         // ダミー画像 (2枚目/サイズ指定)
                         partsArray.push({
-                            inlineData: { mimeType: 'image/png', data: ratioBase64 } 
+                            inlineData: { mimeType: 'image/png', data: ratioBase64, },
                         });
                     }
 
                     const initialPayload = {
-                        contents: [{ parts: partsArray }],
-                        safetySettings: [{ category: "HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold: "BLOCK_NONE" }],
-                        generationConfig: { responseModalities: ['TEXT', 'IMAGE'] },
+                        contents: [{ parts: partsArray, },],
+                        safetySettings: [{ category: "HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold: "BLOCK_NONE", },],
+                        generationConfig: { responseModalities: ['TEXT', 'IMAGE',], },
                     };
 
                     let finalBase64Data = await generateImageWithRetry(initialPayload, 6, '画像を生成中', false);
 
-                    setLoadingState(false); 
+                    setLoadingState(false);
 
                     const selectedPackage = elements.packageSelect.value;
-                    let result = { base64Data: finalBase64Data, wasProblematic: false };
+                    let result = { base64Data: finalBase64Data, wasProblematic: false, };
 
                     if (selectedPackage !== 'no packaging box' && selectedPackage !== '') {
                         if (finalBase64Data) {
@@ -1319,7 +1336,7 @@
                                 result = await checkAndFixCopyright(finalBase64Data, true, logoLocationHint);
                             } else {
                                 console.log('[figureMaker] 生成画像:ロゴなし。自動修正をスキップ。');
-                                result = { base64Data:finalBase64Data, wasProblematic:false };
+                                result = { base64Data:finalBase64Data, wasProblematic:false, };
                             }
                         } catch (error) {
                             console.error('[figureMaker] 自動修正中にエラーが発生しました:', error);
@@ -1381,13 +1398,13 @@
 
                         // ロゴ修正ボタンをキャンセル表示に変更
                         elements.fixLogoBtn.innerHTML = `<span class="material-symbols-outlined text-sm">close</span> キャンセル`;
-                        elements.fixLogoBtn.classList.remove('bg-blue-400', 'hover:bg-blue-500'); 
+                        elements.fixLogoBtn.classList.remove('bg-blue-400', 'hover:bg-blue-500');
                         elements.fixLogoBtn.classList.add('bg-red-500', 'hover:bg-red-600');
 
                         setImageLoadingState(true, '修正したい場所をクリックしてください。', false);
                         elements.fixLogoBtn.disabled = false;
                         elements.imageLoadingOverlay.classList.add('click-to-fix-cursor');
-                        elements.imageLoadingOverlay.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        elements.imageLoadingOverlay.scrollIntoView({ behavior: 'smooth', block: 'center', });
                     } else {
                         // --- OFF: クリック待機モードを終了する ---
                         setImageLoadingState(false);
@@ -1403,7 +1420,7 @@
                         // ロゴ修正ボタンを元の表示に戻す
                         elements.fixLogoBtn.innerHTML = `<span class="material-symbols-outlined text-sm">edit</span> ロゴ修正`;
                         elements.fixLogoBtn.classList.remove('bg-red-500', 'hover:bg-red-600');
-                        elements.fixLogoBtn.classList.add('bg-blue-400', 'hover:bg-blue-500'); 
+                        elements.fixLogoBtn.classList.add('bg-blue-400', 'hover:bg-blue-500');
                     }
                     return;
                 }
@@ -1415,11 +1432,11 @@
                 } else if (type === 'closeup') {
                     message = 'クローズアップ中';
                 } else {
-                    message = 'さらに強化中'; 
+                    message = 'さらに強化中';
                 }
                 setImageLoadingState(true, message);
                 if (type === 'custom') {
-                    elements.customFixPrompt.value = customPrompt; 
+                    elements.customFixPrompt.value = customPrompt;
                 }
 
                 try {
@@ -1442,7 +1459,7 @@
                             key: `Maximize the photorealism and clarity of this acrylic keychain figure. Emphasize the clear plastic transparency and the texture of the keyring attachment. Sharpen the printed details and enhance the light reflection on the glossy surface. CRITICAL: The subject must maintain its appearance as a clear acrylic keychain.`,
                             toy: `Dramatically enhance the soft texture and realism of this plush toy. Emphasize the stitching, fabric weave, and cotton filling texture. Apply realistic soft lighting and shadow for a professional, high-quality plush toy photo. CRITICAL: The subject must clearly look like a soft, fluffy plush toy.`,
                             cos: `Apply professional photo retouching to maximize the realism, detail, and lighting quality of this image. Enhance skin texture, sharpen focus, and refine color grading to achieve the quality of a high-end photography magazine. CRITICAL: The subject must look like a real, professionally photographed cosplayer.`,
-                            ghibli: `Maximize the quality of this Studio Ghibli style illustration. Enhance the soft, pastel color palette, clarify the 2D hand-drawn lines, and add fine detail to the background art. CRITICAL: The subject must maintain the distinct aesthetic of a hand-drawn Ghibli animation.`
+                            ghibli: `Maximize the quality of this Studio Ghibli style illustration. Enhance the soft, pastel color palette, clarify the 2D hand-drawn lines, and add fine detail to the background art. CRITICAL: The subject must maintain the distinct aesthetic of a hand-drawn Ghibli animation.`,
                         };
                         // ベースプロンプトを取得。未定義なら汎用的な強化プロンプトを使用
                         const baseEnhancementPrompt = enhancePrompts[figureType] || `Apply a highly subtle, non-destructive image processing pass. Maximize the photorealistic quality, sharpness, detail, and surface texture realism of the existing figure without altering its pose, design, or colors. CRITICAL: This is a professional retouch.`;
@@ -1452,17 +1469,17 @@
 
                     const fixPayload = {
                         contents: [{ parts: [
-                            { text: fixPrompt },
-                            { inlineData: { mimeType: 'image/jpeg', data: currentImageData } }
-                        ]}],
-                        safetySettings: [{ category: "HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold: "BLOCK_NONE" }],
-                        generationConfig: { responseModalities: ['TEXT', 'IMAGE'] }, 
+                            { text: fixPrompt, },
+                            { inlineData: { mimeType: 'image/jpeg', data: currentImageData, }, },
+                        ], },],
+                        safetySettings: [{ category: "HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold: "BLOCK_NONE", },],
+                        generationConfig: { responseModalities: ['TEXT', 'IMAGE',], },
                     };
 
                     const fixedBase64Data = await generateImageWithRetry(fixPayload, 6, message, true);
 
                     // Positive Prompt にカスタム修正プロンプトを追加
-                    if (fixPrompt) { 
+                    if (fixPrompt) {
                         if (lastPositivePrompt.trim() !== '') {
                             lastPositivePrompt += `\nCustomPrompt: ${fixPrompt}, `;
                         } else {
@@ -1477,7 +1494,7 @@
                     console.error('[figureMaker] 修正に失敗しました:', error);
                     showError(error.message || '修正に失敗しました。');
                     if (type === 'custom') {
-                        elements.customFixPrompt.value = customPrompt; 
+                        elements.customFixPrompt.value = customPrompt;
                     }
                 } finally {
                     setImageLoadingState(false);
@@ -1487,7 +1504,7 @@
 
             async function generateImageWithRetry(payload, maxRetries, loadingMessage, isImageOverlay = false) {
                 for (let i = 0; i < maxRetries; i++) {
-                    const fullMessage = `${loadingMessage}... （Retry ${i}/${maxRetries - 1}）`; 
+                    const fullMessage = `${loadingMessage}... （Retry ${i}/${maxRetries - 1}）`;
                     if (isImageOverlay) {
                         elements.imageLoadingText.textContent = fullMessage;
                     } else {
@@ -1517,14 +1534,16 @@
             }
 
             function updateLoadingText(message) {
-                if (elements.loading.classList.contains('hidden')) return;
+                if (elements.loading.classList.contains('hidden')) {
+                    return;
+                }
                 elements.loadingText.textContent = message;
             }
 
             function setLoadingState(isLoading, message = '') {
                 if (isLoading) {
                     elements.generateBtn.disabled = true;
-                    elements.actionArea.classList.add('hidden'); 
+                    elements.actionArea.classList.add('hidden');
                     elements.errorMessage.classList.add('hidden');
                     elements.outputSection.classList.remove('hidden');
                     elements.loading.classList.remove('hidden');
@@ -1532,13 +1551,13 @@
                     elements.copyrightWarning.classList.add('hidden');
                     elements.loadingText.textContent = message;
 
-                    const animations = ['anim-bounce', 'anim-spin-bounce', 'anim-wiggle', 'anim-waddle'];
+                    const animations = ['anim-bounce', 'anim-spin-bounce', 'anim-wiggle', 'anim-waddle',];
                     const icons = Array.from(elements.loadingAnimation.children);
                     icons.forEach(icon => icon.className = 'hidden');
                     const randomIndex = Math.floor(Math.random() * animations.length);
                     icons[randomIndex].className = animations[randomIndex];
 
-                    elements.loading.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    elements.loading.scrollIntoView({ behavior: 'smooth', block: 'center', });
                 } else {
                     elements.generateBtn.disabled = false;
                     elements.loading.classList.add('hidden');
@@ -1552,7 +1571,7 @@
                     elements.imageLoadingOverlay.classList.remove('hidden');
                     elements.imageLoadingText.textContent = message;
                     if (showAnimation) {
-                        const animations = ['anim-bounce', 'anim-spin-bounce', 'anim-wiggle', 'anim-waddle'];
+                        const animations = ['anim-bounce', 'anim-spin-bounce', 'anim-wiggle', 'anim-waddle',];
                         const icons = Array.from(elements.imageLoadingAnimation.children);
                         icons.forEach(icon => icon.className = 'hidden');
                         const randomIndex = Math.floor(Math.random() * animations.length);
@@ -1562,7 +1581,7 @@
                         elements.imageLoadingAnimation.classList.add('hidden');
                     }
                     window.requestAnimationFrame(() => {
-                        elements.imageLoadingOverlay.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        elements.imageLoadingOverlay.scrollIntoView({ behavior: 'smooth', block: 'center', });
                     });
                 } else {
                     elements.imageLoadingOverlay.classList.add('hidden');
@@ -1579,9 +1598,9 @@
                 // 新しい履歴を追加
                 imageHistory.push({
                     imageData: newImageData,
-                    promptText: newPromptText, 
+                    promptText: newPromptText,
                     positivePrompt: lastPositivePrompt,
-                    negativePrompt: lastNegativePrompt
+                    negativePrompt: lastNegativePrompt,
                 });
                 // 履歴が上限を超えた場合、最も古いものを削除
                 if (imageHistory.length > MAX_HISTORY_SIZE) {
@@ -1617,7 +1636,7 @@
                     elements.actionArea.classList.remove('hidden');
 
                     if (shouldScroll) {
-                        elements.outputSection.scrollIntoView({ behavior: 'smooth' });
+                        elements.outputSection.scrollIntoView({ behavior: 'smooth', });
                     }
 
                     // 生成プロンプトの履歴含める ---
@@ -1653,10 +1672,10 @@
             }
 
             function updateResetButtonVisibility() {
-                const hasText = elements.additionalPrompt.value.trim().length > 0 || 
+                const hasText = elements.additionalPrompt.value.trim().length > 0 ||
                                 elements.additionalNegativePrompt.value.trim().length > 0;
                 if (hasText) {
-                    elements.resetPromptsButton.classList.remove('opacity-0', 'pointer-events-none'); 
+                    elements.resetPromptsButton.classList.remove('opacity-0', 'pointer-events-none');
                 } else {
                     elements.resetPromptsButton.classList.add('opacity-0', 'pointer-events-none');
                 }
@@ -1681,10 +1700,12 @@
             // ダウンロードボタンのクリック時にPNG変換とダウンロードを実行する
             function handleDownload(e) {
                 // ダウンロード処理が完了するまで、ブラウザのデフォルト動作（即時ダウンロード）を止める
-                e.preventDefault(); 
+                e.preventDefault();
 
                 const historyItem = imageHistory[currentImageIndex];
-                if (!historyItem) return;
+                if (!historyItem) {
+                    return;
+                }
 
                 const jpegDataUrl = `data:image/jpeg;base64,${historyItem.imageData}`;
                 const img = new Image();
@@ -1695,10 +1716,10 @@
                 elements.downloadBtn.disabled = true;
 
                 // 以前のオブジェクトURLがあれば解放する（エラー防止のため、処理の最初に実行）
-                if (elements.downloadBtn.dataset.tempUrl) { 
-                    URL.revokeObjectURL(elements.downloadBtn.dataset.tempUrl); 
+                if (elements.downloadBtn.dataset.tempUrl) {
+                    URL.revokeObjectURL(elements.downloadBtn.dataset.tempUrl);
                     delete elements.downloadBtn.dataset.tempUrl;
-                } 
+                }
 
                 img.onload = () => {
                     try {
@@ -1735,7 +1756,7 @@
                                 document.body.removeChild(a);
 
                                 // 一時URLを保持 (解放のため)
-                                elements.downloadBtn.dataset.tempUrl = tempUrl; 
+                                elements.downloadBtn.dataset.tempUrl = tempUrl;
                             })
                             .catch(e => {
                                 console.error("[figureMaker] ダウンロード準備に失敗しました:", e);
@@ -1759,7 +1780,7 @@
                     showError('画像の読み込みに失敗しました。');
                     elements.downloadBtn.classList.remove('opacity-50', 'pointer-events-none');
                     elements.downloadBtn.disabled = false;
-                }
+                };
 
                 // 画像のロードを開始
                 img.src = jpegDataUrl;
@@ -1769,7 +1790,7 @@
                 const htmlMessage = message.replace(/\n/g, '<br>');
                 elements.errorMessage.innerHTML = htmlMessage;
                 elements.errorMessage.classList.remove('hidden');
-                elements.errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                elements.errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center', });
             }
 
             // ========= トーストメッセージを表示する関数 =========
@@ -1847,7 +1868,9 @@
             }
 
             function copyToClipboard(text, buttonElement) {
-                if (!text) return;
+                if (!text) {
+                    return;
+                }
                 const textArea = document.createElement('textarea');
                 textArea.value = text;
                 textArea.style.position = 'fixed'; textArea.style.left = '-9999px';
@@ -1857,7 +1880,9 @@
                     document.execCommand('copy');
                     const originalIcon = buttonElement.innerHTML;
                     buttonElement.innerHTML = `<span class="material-symbols-outlined text-sm text-green-400">check</span>`;
-                    setTimeout(() => { buttonElement.innerHTML = originalIcon; }, 1500);
+                    setTimeout(() => {
+                        buttonElement.innerHTML = originalIcon;
+                    }, 1500);
                 } catch (err) {
                     console.error('[figureMaker] Copy failed', err);
                     showError('コピーに失敗しました。');
