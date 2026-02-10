@@ -15,7 +15,7 @@ jobs:
 
       - name: Advanced Link Check
         run: |
-          LAST_UPDATE="2026-01-30"
+          LAST_UPDATE="2026-02-10"
           NEXT_UPDATE=$(date -d "$LAST_UPDATE + 60 days" +%Y-%m-%d)
 
           CURRENT_DATE=$(date +%Y-%m-%d)
