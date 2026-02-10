@@ -31,7 +31,9 @@
 ✨ **[フィギュア化メーカーを試す](https://gemini.google.com/share/cdbce5ec46a6)** ✨  
 
 <!-- STATUS_START -->
-<!-- STATUS_END -->
+共有リンク(share link) 最終更新日(last update): 2026-02-10 (0 日経過)  
+次回更新予定日(next update): 2026-04-11
+<!-- STATUS_END -->  
 
 ---
 
