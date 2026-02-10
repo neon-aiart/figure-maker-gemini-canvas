@@ -28,7 +28,7 @@
 
 以下のリンクから、Gemini Canvas環境で直接アプリをご利用ください。  
 
-**[✨ フィギュア化メーカーを試す ✨](https://gemini.google.com/share/cdbce5ec46a6)**  
+✨ **[フィギュア化メーカーを試す](https://gemini.google.com/share/cdbce5ec46a6)** ✨  
 
 ---
 
