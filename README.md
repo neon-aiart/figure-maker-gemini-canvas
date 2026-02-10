@@ -30,6 +30,9 @@
 
 ✨ **[フィギュア化メーカーを試す](https://gemini.google.com/share/cdbce5ec46a6)** ✨  
 
+<!-- STATUS_START -->
+<!-- STATUS_END -->
+
 ---
 
 ## 🌟 v6.3 での主な進化 (Major Update!)  
