@@ -21,7 +21,7 @@ jobs:
           DIFF=$(( ($(date -d "$CURRENT_DATE" +%s) - $(date -d "$LAST_UPDATE" +%s)) / 86400 ))
 
           if [ $DIFF -ge 60 ]; then
-            STATUS="共有リンク 最終更新日: $LAST_UPDATE (**⚠️ $DIFF 日経過 - まもなくリンク切れ**)\n次回更新予定日: $NEXT_UPDATE"
+            STATUS="共有リンク 最終更新日: $LAST_UPDATE (**⚠️ $DIFF 日経過 - まもなくリンク切れ**)  \n次回更新予定日: $NEXT_UPDATE"
           else
             STATUS="共有リンク(share link) 最終更新日(last update): $LAST_UPDATE ($DIFF 日経過)  \n次回更新予定日(next update): $NEXT_UPDATE"
           fi
