@@ -182,10 +182,10 @@ These have been confirmed to contain **VIRUSES or MALWARE**.
 This app is designed specifically for the Gemini Canvas environment and cannot be run as a standalone file.  
 
 ### ⚖️ 法的措置と通報について / Legal Action & Abuse Reports  
-当プロジェクトの無断転載に対し、過去に **DMCA Take-down通知** を送付しています。  
+当プロジェクトの制作物に対する無断転載が確認されたため、過去に **DMCA Take-down通知** を送付しています。  
 また、マルウェアを配布する悪質なサイトについては、順次 **各機関へ通報 (Malware / Abuse Report)** を行っています。  
-We have filed **DMCA Take-down notices** against unauthorized re-uploads.  
-Furthermore, we are actively submitting **Malware / Abuse Reports** to relevant authorities regarding sites that distribute malicious software under our name.  
+We have filed **DMCA Take-down notices** against unauthorized re-uploads of my projects.  
+Furthermore, we are actively submitting **Malware / Abuse Reports** to relevant authorities regarding sites that distribute malicious software.  
 
 ---
 
