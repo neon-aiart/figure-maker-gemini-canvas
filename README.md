@@ -165,17 +165,6 @@ The source code for this application is copyrighted by Neon.
 
 ---
 
-### 🖼️ 生成したAIイラストについて / About Generated AI Illustrations  
-
-* **クレジット表記・使用報告などは一切不要です:** 生成した画像は自由にご利用いただけます。クレジット表記や使用報告の義務はありません。  
-  **No Credit or Reporting Required:** You are free to use the generated images. There is no obligation to provide credit or report usage.  
-* **SNS投稿時の推奨事項:** SNSなどに投稿する場合は、トラブルを避けるために**AI生成タグ**をつけることを推奨します。  
-  **Posting on SNS:** When posting to SNS, it is recommended to use **AI-generation tags** to avoid potential misunderstandings or issues.  
-* **規約の順守:** その他、**Google側のルールを順守**してご利用ください。  
-  **Compliance with Rules:** Please comply with all other **Google policies and terms of service** when using this tool.  
-
----
-
 ## ⚠️ セキュリティ警告 / Security Warning  
 
 🚨 **重要：公式配布について / IMPORTANT: Official Distribution**  
@@ -197,6 +186,17 @@ This app is designed specifically for the Gemini Canvas environment and cannot b
 また、マルウェアを配布する悪質なサイトについては、順次 **各機関へ通報 (Malware / Abuse Report)** を行っています。  
 We have filed **DMCA Take-down notices** against unauthorized re-uploads.  
 Furthermore, we are actively submitting **Malware / Abuse Reports** to relevant authorities regarding sites that distribute malicious software under our name.  
+
+---
+
+### 🖼️ 生成したAIイラストについて / About Generated AI Illustrations  
+
+* **クレジット表記・使用報告などは一切不要です:** 生成した画像は自由にご利用いただけます。クレジット表記や使用報告の義務はありません。  
+  **No Credit or Reporting Required:** You are free to use the generated images. There is no obligation to provide credit or report usage.  
+* **SNS投稿時の推奨事項:** SNSなどに投稿する場合は、トラブルを避けるために**AI生成タグ**をつけることを推奨します。  
+  **Posting on SNS:** When posting to SNS, it is recommended to use **AI-generation tags** to avoid potential misunderstandings or issues.  
+* **規約の順守:** その他、**Google側のルールを順守**してご利用ください。  
+  **Compliance with Rules:** Please comply with all other **Google policies and terms of service** when using this tool.  
 
 ---
 
