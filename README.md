@@ -29,7 +29,6 @@
 以下のリンクから、Gemini Canvas環境で直接アプリをご利用ください。  
 
 ✨ **[フィギュア化メーカーを試す](https://gemini.google.com/share/cdbce5ec46a6)** ✨  
-
 <!-- STATUS_START -->
 共有リンク(share link) 最終更新日(last update): 2026-02-10 (4 日経過)  
 <!-- STATUS_END -->

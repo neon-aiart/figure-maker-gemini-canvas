@@ -41,15 +41,18 @@ jobs:
           #   STATUS="🟢 共有リンク(share link) 最終更新日(last update): $LAST_UPDATE ($DIFF 日経過)  \n次回更新予定日(next update): $NEXT_UPDATE"
           # fi
 
-          STATUS="共有リンク(share link) 最終更新日(last update): $LAST_UPDATE ($DIFF 日経過)"
+          # DIFFが1なら"day"、それ以外（0や2以上）なら"days"を代入
+          UNIT=$([ "$DIFF" -eq 1 ] && echo "day" || echo "days")
+
+          STATUS="share link last update: $LAST_UPDATE ($DIFF $UNIT ago)"
 
           # 魔法のsedコマンド（エスケープ版）
           sed -i "/STATUS_START/,/STATUS_END/c\\\x3c\x21\x2d\x2d STATUS_START \x2d\x2d\x3e\n$STATUS  \n\x3c\x21\x2d\x2d STATUS_END \x2d\x2d\x3e" README.md
 
       - name: Commit and Push
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.email "240400715+neon-aiart@users.noreply.github.com"
+          git config --local user.name "neon-aiart"
           git add README.md
           git commit -m "Update link expiry status: $(date +%Y-%m-%d)" || exit 0
           git push
