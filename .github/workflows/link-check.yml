@@ -1,4 +1,4 @@
-name: Update Readme
+name: link check and update readme
 
 on:
   schedule:
