@@ -28,10 +28,13 @@
 
 以下のリンクから、Gemini Canvas環境で直接アプリをご利用ください。  
 
-✨ **[フィギュア化メーカーを試す](https://gemini.google.com/share/cdbce5ec46a6)** ✨  
+✨ **[フィギュア化メーカーを試す](https://gemini.google.com/share/aaca4e12ffd4)** ✨  
 <!-- STATUS_START -->
 share link last update: 2026-02-10 (8 days ago)  
 <!-- STATUS_END -->
+
+**Old Version**:  
+v6.4 (2026-02-10) [https://gemini.google.com/share/cdbce5ec46a6](https://gemini.google.com/share/cdbce5ec46a6)  
 
 ---
 
@@ -99,21 +102,25 @@ share link last update: 2026-02-10 (8 days ago)
 
 ---
 
-## 📝 更新履歴 (v3.9 → v6.4)  
+## 📝 更新履歴 (v3.9 → v6.5)  
 
-### v6.3 → v6.4 の変更点  
+### v6.5 (Current Release)  
+☑️ ライセンスを `PolyForm Noncommercial 1.0.0` に変更  
+✅ テキスト応答Geminiモデルを `gemini-2.5-flash-preview-09-2025` に変更  
+
+### v6.4  
 ☑️ ４枚生成ボタン(未実装): disabledでscaleしちゃうの修正（実装されたらdisable削除）  
 ☑️ 新しく生成をするときに反転状態を解除  
 ☑️ 安全フィルターで生成AIに届く前に削除された場合は中断  
 
-### v6.2 → v6.3 の変更点  
+### v6.3  
 ✅ 生成段階で違法ロゴが生成されるのを抑制  
 ✅ 「さらに強化」の改善  
 ☑️ 「元に戻す」「やり直す」履歴の数の上限 追加 MAX:20  
 ☑️ ロゴ修正のプロンプトをシンプル化  
 ✅ アスペクト比の変更 追加  
 
-### v6.1 → v6.2 の変更点  
+### v6.2  
 ☑️ Positive|Negative入力欄: Enterで実行、Shift+Enterで改行  
 ✅ パッケージと台座に「指定しない」を追加  
 ✅ 「アクスタ｜アクキー｜ぬい｜コスプレ｜ジブリ風」追加、「フィギュア」を「ベーシック」に変更  
@@ -122,29 +129,29 @@ share link last update: 2026-02-10 (8 days ago)
   * アクキー、ぬい： ベーシック、台座なし  
   * コスプレ、ジブリ風： ベーシック、指定しない（背景）、台座なし  
 
-### v6.0 → v6.1 の変更点  
+### v6.1  
 ☑️ カスタム修正 「Custom Prompt: 」接頭語追加  
 ✅ クリアーボタン 追加  
 ✅ 左右反転  
 
-### v5.10 → v6.0  
+### v6.0  
 ☑️ ローディングアニメーションを追加 🐤  
 
-### v4.8 → v5.4  
+### v5.4  
 ✅ ロゴ修正（ワンクリック導入）  
 
-### v4.5 → v4.8  
+### v4.8  
 ✅ クローズアップボタン 追加  
 
-### v4.4 → v4.5  
+### v4.5  
 ✅ 自動翻訳 ON|OFF 追加  
 
-### v4.3 → v4.4  
+### v4.4  
 ✅ 「箱なし」で著作権チェックをスキップ  
 ✅ 自動修正前も履歴に入れる  
 ☑️ 固有名詞を翻訳しない  
 
-### v3.9 → v4.3 の変更点  
+### v4.3 の変更点  
 ✅ ライセンス表記を追加  
 ☑️ 自動翻訳にキャッシュを導入  
 ☑️ iPhoneでのダウンロードに対応  
@@ -154,12 +161,18 @@ share link last update: 2026-02-10 (8 days ago)
 
 ## 🛡️ ライセンスについて (License)  
 
-このアプリケーションのソースコードは、ねおんが著作権を保有しています。  
+このユーザースクリプトのソースコードは、ねおんが著作権を保有しています。  
 The source code for this application is copyrighted by Neon.  
 
-* **ライセンス**: **[CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.ja)** です。（LICENSEファイルをご参照ください。）  
-* **商用利用不可**: 個人での利用や改変、非営利の範囲内での再配布はOKです。**商用目的での利用はご遠慮ください**。  
-  **No Commercial Use**: Personal use, modification, and non-profit redistribution are permitted. **Please refrain from commercial use.**  
+* **ライセンス / License**: **[PolyForm Noncommercial 1.0.0](https://polyformproject.org/licenses/noncommercial/1.0.0/)** です。（LICENSEファイルをご参照ください。）  
+  Licensed under PolyForm Noncommercial 1.0.0. (Please refer to the LICENSE file for details.)  
+* **個人利用・非営利目的限定 / For Personal and Non-commercial Use Only**:  
+  * 営利目的での利用、無断転載、クレジットの削除は固く禁じます。  
+    Commercial use, unauthorized re-uploading, and removal of author credits are strictly prohibited.  
+* **再配布について / About Redistribution**:  
+  * 本スクリプトを改変・配布（フォーク）する場合は、必ず元の作者名（ねおん）およびクレジット表記を維持してください。  
+    If you modify or redistribute (fork) this script, you MUST retain the original author's name (Neon) and all credit notations.  
+
 ※ ご利用は自己責任でお願いします。（悪用できるようなものではないですが、念のため！）  
 
 ---
