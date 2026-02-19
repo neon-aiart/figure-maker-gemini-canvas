@@ -1,4 +1,4 @@
-# 🐥 フィギュア化メーカー (Figure Maker) v6.4  
+# 🐥 フィギュア化メーカー (Figure AIart Maker) v6.5  
 
 <img src="https://raw.githubusercontent.com/neon-aiart/figure-maker-gemini-canvas/main/figure_maker_20250924_174842.png" style="height: 200px; width: 200px; object-fit: contain;" align="right" alt="Meshi Art Sample" />
 
