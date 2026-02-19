@@ -30,7 +30,7 @@
 
 ✨ **[フィギュア化メーカーを試す](https://gemini.google.com/share/cdbce5ec46a6)** ✨  
 <!-- STATUS_START -->
-share link last update: 2026-02-10 (8 days ago)  
+share link last update: 2026-02-10 (9 days ago)  
 <!-- STATUS_END -->
 
 ---
