@@ -25,12 +25,12 @@ footer.site-footer,
         color: #24292f !important;            /* GitHub標準の文字色 */
     }
     strong, h1, h2, h3, p { color: #24292f !important; }
-    a { color: #0969da !important; }        /* リンクの色も調整 */
+    a, a:visited { color: #0969da !important; }        /* リンクの色も調整 */
     table, tr, td, th {
         background-color: #fff0f5 !important;
         border-color: #24292f !important;
     }
-    code, pre {
+    code, pre, details summary {
         background-color: #ffe1eb !important;
         color: #24292f !important;
     }
@@ -47,12 +47,12 @@ footer.site-footer,
         color: #c9d1d9 !important;            /* GitHubダークモードの文字色 */
     }
     strong, h1, h2, h3, p { color: #c9d1d9 !important; }
-    a { color: #96D0ff !important; }        /* 青リンクを見やすく */
+    a, a:visited { color: #96D0ff !important; }        /* 青リンクを見やすく */
     table, tr, td, th {
         background-color: #212830 !important;
         border-color: #c9d1d9 !important;
     }
-    code, pre {
+    code, pre, details summary {
         background-color: #21323f !important;
         color: #c9d1d9 !important;
     }
@@ -64,3 +64,23 @@ footer.site-footer,
 
 /* 余計な枠線や影も消す */
 .site-header { border: none !important; }
+
+/* detailsの三角形（マーカー）と中身を横に並べる */
+details summary {
+    display: list-item; /* 三角形を表示するための設定 */
+    cursor: pointer;
+    padding: 10px 5px;  /* 少し余白を持たせる */
+    border-radius: 6px; /* 角を丸くする */
+}
+
+/* summaryの中に入ってしまった余計なdivやpをインライン化する */
+details summary div,
+details summary p,
+details summary pre,
+details summary code {
+    display: inline !important; /* ブロック要素を強制的にインライン化 */
+    margin: 0 !important;
+    padding: 0 !important;
+    background: none !important; /* 余計な背景色も抹殺 */
+    border: none !important;
+}
